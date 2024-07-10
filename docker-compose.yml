@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: arm64v8/postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+    volumes:
+      - ./var/postgres:/var/lib/postgresql/data
